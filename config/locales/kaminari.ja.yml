@@ -1,0 +1,7 @@
+ja:
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      previous: "&laquo; 前へ"
+      next: "次へ &rsaquo;"
