@@ -1,0 +1,25 @@
+<% title = t('views.common.title_show', name: Report.model_name.human) %>
+<% content_for :title, title %>
+
+<h1><%= title %></h1>
+
+<div class="show-item">
+  <%= render @report %>
+</div>
+
+<nav class="page-nav">
+  <%= link_to t('views.common.edit', name: Report.model_name.human.downcase), edit_report_path(@report) %> |
+  <%= link_to t('views.common.back', name: i18n_pluralize(Report.model_name.human.downcase)), reports_path %>
+
+  <%= button_to t('views.common.destroy', name: Report.model_name.human.downcase), @report, method: :delete %>
+</nav>
+
+<section>
+  <h2>コメント</h2>
+  <% @report.comments.each do |comment| %>
+    <%= render 'comments/comment', comment: comment, commentable: @report %>
+  <% end %>
+
+  <h3>コメントを投稿する</h3>
+  <%= render 'comments/comment_form', commentable: @report %>
+</section>
