@@ -35,8 +35,8 @@ ja:
         memo: "説明文"
         author: "著者"
         picture: "書影"
-      models:
-        book: '本'
+    models:
+      book: '本'
 
   helpers:
     submit:
