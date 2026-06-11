@@ -59,3 +59,8 @@ en:
       edit_book: "Edit this book"
       back_to_books: "Back to books"
       destroy_book: "Destroy this book"
+  controllers:
+    common:
+      notice_create: "%{name} was successfully created."
+      notice_update: "%{name} was successfully updated."
+      notice_destroy: "%{name} was successfully destroyed."

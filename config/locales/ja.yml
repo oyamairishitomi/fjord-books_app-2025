@@ -35,12 +35,20 @@ ja:
         memo: "説明文"
         author: "著者"
         picture: "書影"
+      models:
+        book: '本'
 
   helpers:
     submit:
       book:
         create: "投稿する"
         update: "更新する"
+
+  controllers:
+    common:
+      notice_create: "%{name}を作成しました。"
+      notice_update: "%{name}を更新しました。"
+      notice_destroy: "%{name}を削除しました。"
 
   books:
     index:
