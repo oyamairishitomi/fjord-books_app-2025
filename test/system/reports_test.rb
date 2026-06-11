@@ -18,11 +18,12 @@ class ReportsTest < ApplicationSystemTestCase
     visit reports_url
     click_on '日報の新規作成'
 
-    fill_in 'タイトル', with: @report.title
-    fill_in '内容', with: @report.content
+    fill_in 'タイトル', with: 'テスト日報'
+    fill_in '内容', with: 'テスト内容'
     click_on '登録する'
 
     assert_text '日報が作成されました。'
+    assert_text 'テスト日報'
     click_on '日報の一覧に戻る'
   end
 
@@ -30,11 +31,12 @@ class ReportsTest < ApplicationSystemTestCase
     visit report_url(@report)
     click_on 'この日報を編集', match: :first
 
-    fill_in 'タイトル', with: @report.title
-    fill_in '内容', with: @report.content
+    fill_in 'タイトル', with: '更新後のタイトル'
+    fill_in '内容', with: '更新後の内容'
     click_on '更新する'
 
     assert_text '日報が更新されました。'
+    assert_text '更新後のタイトル'
     click_on '日報の一覧に戻る'
   end
 
