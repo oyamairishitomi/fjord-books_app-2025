@@ -3,11 +3,9 @@
 one:
   body: MyText
   user: one
-  commentable: one
-  commentable_type: Commentable
+  commentable: one (Book)
 
 two:
   body: MyText
   user: two
-  commentable: two
-  commentable_type: Commentable
+  commentable: two (Report)

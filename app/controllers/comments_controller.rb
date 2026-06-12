@@ -15,8 +15,13 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = @commentable.comments.find(params[:id])
-    @comment.destroy!
-    redirect_to @commentable, status: :see_other, notice: 'コメントを削除しました。'
+
+    if @comment.user == current_user
+      @comment.destroy!
+      redirect_to @commentable, status: :see_other, notice: 'コメントを削除しました。'
+    else
+      redirect_to @commentable, status: :see_other, alert: '自分のコメントのみ削除できます。'
+    end
   end
 
   private
