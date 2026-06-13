@@ -27,11 +27,10 @@ class CommentsController < ApplicationController
   private
 
   def set_commentable
-    if params[:book_id]
-      @commentable = Book.find(params[:book_id])
-    elsif params[:report_id]
-      @commentable = Report.find(params[:report_id])
-    end
+    key = params.keys.find { |k| k.end_with?('_id') }
+    model_name = key.delete_suffix('_id')
+    model_class = model_name.classify.constantize
+    @commentable = model_class.find(params[key])
   end
 
   def comment_params
