@@ -27,41 +27,42 @@
 #       "yes": yup
 #       enabled: "ON"
 
-en:
-  hello: "Hello world"
-
+ja:
   activerecord:
     attributes:
       book:
-        title: "Title"
-        memo: "Memo"
-        author: "Author"
-        picture: "Picture"
+        title: "タイトル"
+        memo: "説明文"
+        author: "著者"
+        picture: "書影"
+    models:
+      book: '本'
 
   helpers:
     submit:
       book:
-        create: "Create book"
-        update: "Update book"
+        create: "投稿する"
+        update: "更新する"
+
+  controllers:
+    common:
+      notice_create: "%{name}を作成しました。"
+      notice_update: "%{name}を更新しました。"
+      notice_destroy: "%{name}を削除しました。"
 
   books:
     index:
-      title: "Books"
-      new_book: "New book"
-      show_book: "Show this book"
+      title: "本一覧"
+      new_book: "新規追加"
+      show_book: "本を見る"
     new:
-      title: "New book"
-      back_to_books: "Back to books"
+      title: "新規追加"
+      back_to_books: "本一覧に戻る"
     edit:
-      title: "Editing book"
-      show_book: "Show this book"
-      back_to_books: "Back to books"
+      title: "編集"
+      show_book: "本を見る"
+      back_to_books: "本一覧に戻る"
     show:
-      edit_book: "Edit this book"
-      back_to_books: "Back to books"
-      destroy_book: "Destroy this book"
-  controllers:
-    common:
-      notice_create: "%{name} was successfully created."
-      notice_update: "%{name} was successfully updated."
-      notice_destroy: "%{name} was successfully destroyed."
+      edit_book: "編集"
+      back_to_books: "本一覧に戻る"
+      destroy_book: "削除"
