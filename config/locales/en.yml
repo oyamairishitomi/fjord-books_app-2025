@@ -51,6 +51,7 @@ en:
       show_book: "Show this book"
     new:
       title: "New book"
+      back_to_books: "Back to books"
     edit:
       title: "Editing book"
       show_book: "Show this book"

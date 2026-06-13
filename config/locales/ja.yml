@@ -57,6 +57,7 @@ ja:
       show_book: "本を見る"
     new:
       title: "新規追加"
+      back_to_books: "本一覧に戻る"
     edit:
       title: "編集"
       show_book: "本を見る"
