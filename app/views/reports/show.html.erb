@@ -4,11 +4,11 @@
   <%= render @report %>
 </div>
 
-<% if @report.mentioned_reports.any? %>
+<% if @report.referring_reports.any? %>
   <div>
     <h2>この日報に言及している日報</h2>
     <ul>
-      <% @report.mentioned_reports.each do |report| %>
+      <% @report.referring_reports.each do |report| %>
         <li><%= link_to report.title, report %></li>
       <% end %>
     </ul>
