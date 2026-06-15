@@ -12,6 +12,7 @@ class Report < ApplicationRecord
 
   validates :title, presence: true
   validates :content, presence: true
+  after_save :sync_report_mention
 
   def editable?(target_user)
     user == target_user
@@ -22,8 +23,17 @@ class Report < ApplicationRecord
   end
 
   HOST_REGEXP = %r{http://localhost:3000/reports/(\d+)}
-  def extract_mentioned_report_ids
+  def mentioned_reports
     ids = content.scan(HOST_REGEXP).flatten.map(&:to_i).uniq
-    Report.where(id: ids).pluck(:id)
+    Report.where(id: ids)
+  end
+
+  private
+
+  def sync_report_mention
+    mentioning_report_mentions.destroy_all
+    mentioned_reports.each do |report|
+      ReportMention.create!(mentioning_report_id: id, mentioned_report_id: report.id)
+    end
   end
 end
