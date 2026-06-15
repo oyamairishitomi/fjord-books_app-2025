@@ -2,6 +2,7 @@
 
 class CommentsController < ApplicationController
   before_action :set_commentable
+  COMMENTABLE_CLASSES = { book_id: Book, report_id: Report }.freeze
 
   def create
     @comment = @commentable.comments.build(comment_params)
@@ -27,10 +28,8 @@ class CommentsController < ApplicationController
   private
 
   def set_commentable
-    key = params.keys.find { |k| k.end_with?('_id') }
-    model_name = key.delete_suffix('_id')
-    model_class = model_name.classify.constantize
-    @commentable = model_class.find(params[key])
+    key, value = COMMENTABLE_CLASSES.find { |k, _v| params[k] }
+    @commentable = value.find(params[key])
   end
 
   def comment_params
