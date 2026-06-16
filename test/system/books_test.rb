@@ -4,29 +4,30 @@ require 'application_system_test_case'
 
 class BooksTest < ApplicationSystemTestCase
   setup do
-    @book = books(:one)
-    @user = users(:one)
+    @book = books(:kouji)
+    @user = users(:kouji)
     sign_in_as @user
   end
 
-  test 'visiting the index' do
+  test '本の一覧ページを表示できる' do
     visit books_url
     assert_selector 'h1', text: '本の一覧'
+    assert_text @book.title
   end
 
-  test 'should create book' do
+  test '本を作成できる' do
     visit books_url
     click_on '本の新規作成'
 
-    fill_in 'タイトル', with: @book.title
-    fill_in 'メモ', with: @book.memo
+    fill_in 'タイトル', with: 'こうじがゆく'
+    fill_in 'メモ', with: '内科医こうじのドタバタ喜劇'
     click_on '登録する'
 
     assert_text '本が作成されました。'
-    click_on '本の一覧に戻る'
+    assert_text 'こうじがゆく'
   end
 
-  test 'should update Book' do
+  test '本を更新できる' do
     visit book_url(@book)
     click_on 'この本を編集', match: :first
 
@@ -38,10 +39,11 @@ class BooksTest < ApplicationSystemTestCase
     click_on '本の一覧に戻る'
   end
 
-  test 'should destroy Book' do
+  test '本を削除できる' do
     visit book_url(@book)
     click_on 'この本を削除', match: :first
 
     assert_text '本が削除されました。'
+    assert_no_text @book.title
   end
 end

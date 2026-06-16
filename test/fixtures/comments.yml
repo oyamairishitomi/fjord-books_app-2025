@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user: one
-  commentable: one
+kouji:
+  user: kouji
+  commentable: kouji
   commentable_type: Commentable
   content: MyText
 
-two:
-  user: two
-  commentable: two
+hitomi:
+  user: hitomi
+  commentable: hitomi
   commentable_type: Commentable
   content: MyText

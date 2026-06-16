@@ -8,7 +8,7 @@ class UserTest < ActiveSupport::TestCase
     assert_equal 'kouji', user.name_or_email
   end
 
-  test 'nameがからの時、emailを返す' do
+  test 'nameが空の時、emailを返す' do
     user = User.new(name: '', email: 'kouji@gmail.com')
     assert_equal 'kouji@gmail.com', user.name_or_email
   end

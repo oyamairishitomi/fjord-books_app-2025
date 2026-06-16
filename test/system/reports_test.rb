@@ -4,30 +4,29 @@ require 'application_system_test_case'
 
 class ReportsTest < ApplicationSystemTestCase
   setup do
-    @report = reports(:one)
-    @user = users(:one)
+    @report = reports(:kouji)
+    @user = users(:kouji)
     sign_in_as @user
   end
 
-  test 'visiting the index' do
+  test '日報の一覧ページを表示できる' do
     visit reports_url
     assert_selector 'h1', text: '日報の一覧'
   end
 
-  test 'should create report' do
+  test '日報を作成できる' do
     visit reports_url
     click_on '日報の新規作成'
 
-    fill_in 'タイトル', with: 'テスト日報'
-    fill_in '内容', with: 'テスト内容'
+    fill_in 'タイトル', with: '誤診王こうじの護身術'
+    fill_in '内容', with: '犬の誤診してクレームが入った。僕は人間の内科医で、犬の診察はできないのに。'
     click_on '登録する'
 
     assert_text '日報が作成されました。'
-    assert_text 'テスト日報'
-    click_on '日報の一覧に戻る'
+    assert_text '誤診王こうじの護身術'
   end
 
-  test 'should update Report' do
+  test '日報を更新できる' do
     visit report_url(@report)
     click_on 'この日報を編集', match: :first
 
@@ -40,7 +39,7 @@ class ReportsTest < ApplicationSystemTestCase
     click_on '日報の一覧に戻る'
   end
 
-  test 'should destroy Report' do
+  test '日報を削除できる' do
     visit report_url(@report)
     click_on 'この日報を削除', match: :first
 
