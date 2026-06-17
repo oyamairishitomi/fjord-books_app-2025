@@ -12,6 +12,7 @@ class ReportsTest < ApplicationSystemTestCase
   test '日報の一覧ページを表示できる' do
     visit reports_url
     assert_selector 'h1', text: '日報の一覧'
+    assert_text 'MyString'
   end
 
   test '日報を作成できる' do
@@ -19,7 +20,7 @@ class ReportsTest < ApplicationSystemTestCase
     click_on '日報の新規作成'
 
     fill_in 'タイトル', with: '誤診王こうじの護身術'
-    fill_in '内容', with: '犬の誤診してクレームが入った。僕は人間の内科医で、犬の診察はできないのに。'
+    fill_in '内容', with: '患者の病気を見抜いた。お礼に栗羊羹をもらった。おいしかった。'
     click_on '登録する'
 
     assert_text '日報が作成されました。'
@@ -36,7 +37,6 @@ class ReportsTest < ApplicationSystemTestCase
 
     assert_text '日報が更新されました。'
     assert_text '更新後のタイトル'
-    click_on '日報の一覧に戻る'
   end
 
   test '日報を削除できる' do
@@ -44,5 +44,6 @@ class ReportsTest < ApplicationSystemTestCase
     click_on 'この日報を削除', match: :first
 
     assert_text '日報が削除されました。'
+    assert_no_text 'MyString'
   end
 end

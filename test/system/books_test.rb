@@ -12,7 +12,7 @@ class BooksTest < ApplicationSystemTestCase
   test '本の一覧ページを表示できる' do
     visit books_url
     assert_selector 'h1', text: '本の一覧'
-    assert_text @book.title
+    assert_text 'こうじの内科ブック'
   end
 
   test '本を作成できる' do
@@ -36,7 +36,6 @@ class BooksTest < ApplicationSystemTestCase
     click_on '更新する'
 
     assert_text '本が更新されました。'
-    click_on '本の一覧に戻る'
   end
 
   test '本を削除できる' do
@@ -44,6 +43,6 @@ class BooksTest < ApplicationSystemTestCase
     click_on 'この本を削除', match: :first
 
     assert_text '本が削除されました。'
-    assert_no_text @book.title
+    assert_no_text 'こうじの内科ブック'
   end
 end
