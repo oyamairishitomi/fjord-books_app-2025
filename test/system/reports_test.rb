@@ -12,7 +12,7 @@ class ReportsTest < ApplicationSystemTestCase
   test '日報の一覧ページを表示できる' do
     visit reports_url
     assert_selector 'h1', text: '日報の一覧'
-    assert_text 'MyString'
+    assert_text '今日のテスト勉強について'
   end
 
   test '日報を作成できる' do

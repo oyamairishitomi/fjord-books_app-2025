@@ -3,11 +3,11 @@
 kouji:
   user: kouji
   commentable: kouji
-  commentable_type: Commentable
-  content: MyText
+  commentable_type: Report
+  content: ひとみさん、テストコードの確認をしなさい
 
 hitomi:
   user: hitomi
   commentable: hitomi
-  commentable_type: Commentable
-  content: MyText
+  commentable_type: Report
+  content: こうじ、専門医のテスト勉強をしなさい

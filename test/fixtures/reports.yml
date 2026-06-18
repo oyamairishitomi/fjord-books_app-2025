@@ -2,10 +2,10 @@
 
 kouji:
   user: kouji
-  title: MyString
-  content: MyText
+  title: 今日のテスト勉強について
+  content: 循環器のことをやった。臨床こそ真のテストで座学に意味はない。
 
 hitomi:
   user: hitomi
-  title: MMMString
-  content: MyText
+  title: 今日のこうじのテスト勉強について
+  content: テストテストと言っているけど漫画読んだり真面目にやろうとしていない。

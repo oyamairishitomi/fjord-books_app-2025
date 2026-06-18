@@ -31,11 +31,12 @@ class BooksTest < ApplicationSystemTestCase
     visit book_url(@book)
     click_on 'この本を編集', match: :first
 
-    fill_in 'タイトル', with: @book.title
-    fill_in 'メモ', with: @book.memo
+    fill_in 'タイトル', with: 'こうじのテスト大戦'
+    fill_in 'メモ', with: '３０代から医学部挑戦、テストとの戦いの全記録'
     click_on '更新する'
 
     assert_text '本が更新されました。'
+    assert_text 'こうじのテスト大戦'
   end
 
   test '本を削除できる' do
