@@ -1,9 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  memo: MyText
+kouji:
+  title: 'こうじの内科ブック'
+  memo: '日本一あてにならない内科ブック！これの真逆をやれば健康長寿'
 
-two:
-  title: MyString
-  memo: MyText
+hitomi:
+  title: 'ひとみの禁煙ガイド'
+  memo: '100回の禁煙に成功した禁煙ニストひとみの禁煙の教え'

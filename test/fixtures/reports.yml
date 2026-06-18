@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user: one
-  title: MyString
-  content: MyText
+kouji:
+  user: kouji
+  title: 今日のテスト勉強について
+  content: 循環器のことをやった。臨床こそ真のテストで座学に意味はない。
 
-two:
-  user: two
-  title: MyString
-  content: MyText
+hitomi:
+  user: hitomi
+  title: 今日のこうじのテスト勉強について
+  content: テストテストと言っているけど漫画読んだり真面目にやろうとしていない。
